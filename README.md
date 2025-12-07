@@ -13,5 +13,5 @@
 
 1. **Clone Repository:**
 ```bash
-git clone https://github.com/yourusername/hrm-payroll-system.git
+git clone https://github.com/aceeejlrz/HRM-Payroll-System
 cd hrm-payroll-system
