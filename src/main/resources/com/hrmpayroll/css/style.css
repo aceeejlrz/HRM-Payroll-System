@@ -1,0 +1,72 @@
+/* Global Styles */
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica", Arial, sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #ecf0f1;
+}
+
+/* Table Styling */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+}
+
+.table-view .column-header {
+    -fx-background-color: #34495e;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #d5dbdb;
+}
+
+/* Buttons */
+.button {
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15;
+    -fx-border-radius: 5;
+}
+
+.button:hover {
+    -fx-opacity: 0.9;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);
+}
+
+/* Tabs */
+.tab-pane .tab-header-area .tab {
+    -fx-background-color: #95a5a6;
+    -fx-padding: 10 20;
+}
+
+.tab-pane .tab-header-area .tab:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+/* Text Fields */
+.text-field, .password-field, .text-area {
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+    -fx-padding: 8;
+    -fx-focus-color: #3498db;
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+}
+
+/* Labels */
+.label {
+    -fx-text-fill: #2c3e50;
+}
+
+/* Alert Dialogs */
+.dialog-pane {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2;
+}

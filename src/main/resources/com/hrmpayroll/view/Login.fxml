@@ -1,14 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.hrmpayroll.controller.LoginController"
+      alignment="CENTER"
+      spacing="20"
+      style="-fx-background-color: linear-gradient(to bottom, #2c3e50, #3498db);"
+      fx:id="loginContainer">
 
-</AnchorPane>
+    <padding>
+        <Insets top="40" right="40" bottom="40" left="40"/>
+    </padding>
+
+    <Label text="HRM &amp; Payroll System"
+           style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+
+    <Label text="Version 2.0"
+           style="-fx-font-size: 14px; -fx-text-fill: white;"/>
+
+    <VBox spacing="15" alignment="CENTER"
+          style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 30;">
+
+        <Label text="Login"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+        <TextField fx:id="usernameField"
+                   promptText="Username"
+                   maxWidth="250"/>
+
+        <PasswordField fx:id="passwordField"
+                       promptText="Password"
+                       maxWidth="250"/>
+
+        <Label fx:id="errorLabel"
+               text="Error message"
+               style="-fx-text-fill: red; -fx-font-size: 12px;"/>
+
+        <Button fx:id="loginButton"
+                text="Login"
+                defaultButton="true"
+                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+        <Hyperlink fx:id="forgotPasswordLink"
+                   text="Forgot Password?"/>
+    </VBox>
+
+    <Label text="© 2025 TechCorp Solutions Inc."
+           style="-fx-text-fill: white; -fx-font-size: 12px;"/>
+</VBox>

@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
+<ScrollPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fitToWidth="true">
 
-</AnchorPane>
+    <VBox spacing="15" style="-fx-padding: 20;">
+        <Label text="Payroll Processing"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+        <GridPane hgap="10" vgap="15">
+            <Label text="Select Employee:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <ComboBox fx:id="employeeCombo" prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+            <Label text="Pay Period:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <ComboBox fx:id="periodCombo" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+            <Label text="Hours Worked:*" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <TextField fx:id="hoursField" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+            <Label text="Bonus Amount:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <TextField fx:id="bonusField" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        </GridPane>
+
+        <HBox spacing="10">
+            <Button fx:id="calculateBtn" text="Calculate Payroll"
+                    style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+            <Button fx:id="processBtn" text="Process Payment"
+                    style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
+        </HBox>
+
+        <TextArea fx:id="resultArea"
+                  prefRowCount="20"
+                  style="-fx-font-family: monospace; -fx-font-size: 12px;"/>
+    </VBox>
+</ScrollPane>

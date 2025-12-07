@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.hrmpayroll.controller.DashboardController"
+            fx:id="mainContainer">
 
-</AnchorPane>
+    <top>
+        <VBox spacing="10" style="-fx-background-color: #2c3e50; -fx-padding: 15;">
+            <Label fx:id="companyLabel" text="TechCorp Solutions Inc."
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <HBox alignment="CENTER_RIGHT" spacing="20">
+                <Label fx:id="welcomeLabel" text="Welcome, User"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                <Button fx:id="logoutBtn" text="Logout"
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <left>
+        <VBox fx:id="navMenu" spacing="10" style="-fx-background-color: #34495e; -fx-padding: 20;">
+            <Button fx:id="employeesBtn" text="👥 Employee Management"
+                    maxWidth="Infinity" style="-fx-font-size: 14px;"/>
+            <Button fx:id="payrollBtn" text="💰 Payroll Processing"
+                    maxWidth="Infinity" style="-fx-font-size: 14px;"/>
+            <Button fx:id="reportsBtn" text="📊 Reports & Analytics"
+                    maxWidth="Infinity" style="-fx-font-size: 14px;"/>
+            <Button fx:id="attendanceBtn" text="📅 Attendance & Leave"
+                    maxWidth="Infinity" style="-fx-font-size: 14px;"/>
+        </VBox>
+    </left>
+
+    <center>
+        <Label text="Welcome to HRM & Payroll System" style="-fx-font-size: 18px;"/>
+    </center>
+</BorderPane>

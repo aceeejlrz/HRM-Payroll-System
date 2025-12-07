@@ -1,14 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
+<TabPane xmlns="http://javafx.com/javafx/17"
+         xmlns:fx="http://javafx.com/fxml/1"
+         fx:id="attendanceTabs">
 
-</AnchorPane>
+    <Tab text="Attendance Tracking">
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Employee:"/>
+                <ComboBox fx:id="employeeCombo" prefWidth="300"/>
+                <Button fx:id="clockInBtn" text="Clock In"/>
+                <Button fx:id="clockOutBtn" text="Clock Out"/>
+            </HBox>
+            <TableView fx:id="attendanceTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="dateCol" text="Date/Time" prefWidth="200"/>
+                    <TableColumn fx:id="hoursCol" text="Hours Worked" prefWidth="150"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </Tab>
+
+    <Tab text="Leave Management">
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <GridPane hgap="10" vgap="15">
+                <Label text="Employee:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <ComboBox fx:id="leaveEmployeeCombo" prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <Label text="Leave Type:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <ComboBox fx:id="leaveTypeCombo" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <Label text="Start Date:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <DatePicker fx:id="startDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <Label text="End Date:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <DatePicker fx:id="endDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                <Label text="Reason:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <TextArea fx:id="reasonArea" prefRowCount="3" prefWidth="400" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+            </GridPane>
+
+            <Button fx:id="requestLeaveBtn" text="Submit Leave Request"
+                    style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+
+            <TableView fx:id="leaveTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="leaveIdCol" text="Request ID" prefWidth="120"/>
+                    <TableColumn fx:id="leaveEmpCol" text="Employee ID" prefWidth="120"/>
+                    <TableColumn fx:id="leaveTypeCol" text="Leave Type" prefWidth="150"/>
+                    <TableColumn fx:id="leaveStatusCol" text="Status" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </Tab>
+</TabPane>
